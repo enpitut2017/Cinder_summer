@@ -22,8 +22,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  database: db_cinder
-  username: cinder
-  password: cinder
+  database: db/production.sqlite3
