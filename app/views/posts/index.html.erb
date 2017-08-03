@@ -16,9 +16,7 @@
       <tr>
         <td><%= post.content %></td>
         <td>
-        <% unless post.user.nil? %>
         <%= post.user.name %>
-        <% end %>
         </td>
         
         <td><%= link_to 'Show', post %></td>
