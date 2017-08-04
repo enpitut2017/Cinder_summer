@@ -1,11 +1,15 @@
-<p>
-  <strong>デモ太郎</strong> さんの投稿
-  (ユーザID : <%= @post.user_id %>)
-</p>
-
-<p>
-	<%= @post.content %>
-</p>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h3 class="panel-title" textcolor="">
+			<strong>デモ太郎</strong> さんの投稿
+  		(ユーザID : <%= @post.user_id %>)
+		</h3>
+		<div class="pelkira">alpha</div>
+	</div>
+	<div class="panel-body">
+		<%= @post.content %>
+	</div>
+</div>
 
 <%= link_to '編集する', edit_post_path(@post) %> |
 <%= link_to '戻る', posts_path %>
