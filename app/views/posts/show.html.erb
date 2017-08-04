@@ -1,7 +1,7 @@
 <div class="panel panel-success">
 	<div class="panel-heading">
-		<h3 class="panel-title" textcolor="">
-			<strong><td><%= link_to "#{post.user.name}", detail_posts_path(:user_id => post.user.id) %></td></strong> さんの投稿
+		<h3 class="panel-title">
+			<strong><td><%= link_to "#{@post.user.name}", detail_posts_path(:user_id => @post.user.id) %></td></strong> さんの投稿
   		(ユーザID : <%= @post.user_id %>)
 		</h3>
 	<div class="panel-body">
@@ -9,5 +9,7 @@
 	</div>
 </div>
 
-<%= link_to '編集する', edit_post_path(@post) %> |
-<%= link_to '戻る', posts_path %>
+<div align="right">
+<%= link_to '編集する', edit_post_path(@post), :class => "btn btn-info"%>
+<%= link_to '戻る', posts_path, :class => "btn btn-default"%>
+</div>
