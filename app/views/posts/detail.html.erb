@@ -1,0 +1,16 @@
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h3 class="panel-title" textcolor="">
+			<strong><%= @user.name %></strong> さん
+  		(ユーザID : <%= @user.id %>)
+		</h3>
+    </div>
+	<table class="table">
+        <tbody>
+		    <% @posts.each do |post| %>
+                <tr>
+                    <td><%= post.content %></td>
+                </tr>
+            <% end %>
+        </tbody>
+</div>

@@ -1,11 +1,9 @@
 <div class="panel panel-success">
 	<div class="panel-heading">
 		<h3 class="panel-title" textcolor="">
-			<strong>デモ太郎</strong> さんの投稿
+			<strong><td><%= link_to "#{post.user.name}", detail_posts_path(:user_id => post.user.id) %></td></strong> さんの投稿
   		(ユーザID : <%= @post.user_id %>)
 		</h3>
-		<div class="pelkira">alpha</div>
-	</div>
 	<div class="panel-body">
 		<%= @post.content %>
 	</div>

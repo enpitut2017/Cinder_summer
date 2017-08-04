@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   # GET /posts
   # GET /posts.json
   def index
@@ -35,6 +35,11 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update]
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def detail
+    @posts = Post.where(params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   # PATCH/PUT /posts/1
