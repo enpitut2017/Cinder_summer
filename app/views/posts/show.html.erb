@@ -10,6 +10,8 @@
 </div>
 
 <div align="right">
-<%= link_to '編集する', edit_post_path(@post), :class => "btn btn-info"%>
+<% if current_user == @post.user %>
+	<%= link_to '編集する', edit_post_path(@post), :class => "btn btn-info"%>
+<% end %>
 <%= link_to '戻る', posts_path, :class => "btn btn-default"%>
 </div>
