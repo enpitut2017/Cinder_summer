@@ -16,7 +16,7 @@
       <tr>
         <td><%= post.content %></td>
         <td>
-        <%= post.user.name %>
+        <%= link_to "#{post.user.name}", detail_posts_path(:user_id => post.user.id) %>
         </td>
         
         <td><%= link_to 'Show', post %></td>
