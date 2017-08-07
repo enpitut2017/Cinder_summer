@@ -1,37 +1,45 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="form-horizontal" role="form">
+	<%= form_with(model: post, local: true) do |form| %>
+  	<% if post.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+				<ul>
+					<% post.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 
-  <div class="field">
-      <%= form.label :company_list, "会社一覧" %><br>
-      <%= text_field_tag 'post[mycompany_list]', @post.mycompany_list.join(',') %>
-  </div>
+	<div class="field form-group">
+		<%= form.label :company_list, "会社一覧",:class => 'control-label col-sm-2' %>
+		<div class="col-sm-5">
+			<%= text_field_tag 'post[mycompany_list]', @post.mycompany_list.join(','),:class => 'form-control' %>
+		</div>
+	</div>
+	<br>
 
-  <div class="field">
-      <%= form.label :mytag_list, "タグ" %><br>
-      <%= text_field_tag 'post[mytag_list]', @post.mytag_list.join(',') %>
-  </div>
+  <div class="field form-group">
+		<%= form.label :mytag_list, "タグ",:class => 'control-label col-sm-2' %>
+		<div class="col-sm-5">
+			<%= text_field_tag 'post[mytag_list]', @post.mytag_list.join(','),:class => 'form-control' %>
+		</div>
+	</div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :post_content %>
-  </div>
+	<div class="field form-group">
+    <%= form.label :content ,:class => 'control-label col-sm-2' %>
+    <div class="col-sm-5">
+			<%= form.text_area :content, id: :post_content,:rows => '8',:class => 'form-control' %>
+  	</div>
+	</div>
   <% if user_signed_in? %>
     <div class="field">
       <%= form.hidden_field :user_id, value: current_user.id %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit "投稿する",:class => 'col-sm-offset-3 col-sm-3 btn btn-success'%>
   </div>
 <% end %>
