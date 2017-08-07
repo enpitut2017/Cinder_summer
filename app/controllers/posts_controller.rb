@@ -7,6 +7,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    word = params[:keyword]
+    @posts = Post.tagged_with(word)
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
