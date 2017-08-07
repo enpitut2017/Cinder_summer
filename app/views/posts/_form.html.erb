@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+      <%= form.label :company_list, "会社一覧" %><br>
+      <%= text_field_tag 'post[mycompany_list]', @post.mycompany_list.join(',') %>
+  </div>
+
+  <div class="field">
+      <%= form.label :company_list, "タグ" %><br>
+      <%= text_field_tag 'post[mytag_list]', @post.mytag_list.join(',') %>
+  </div>
+
+  <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :post_content %>
   </div>
