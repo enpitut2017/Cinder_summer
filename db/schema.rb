@@ -12,21 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170807014659) do
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post_companies", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_post_companies_on_company_id"
-    t.index ["post_id"], name: "index_post_companies_on_post_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
