@@ -7,6 +7,16 @@
 	<div class="panel-body">
 		<%= @post.content %>
 	</div>
+	<div class="row">
+		<span class="col-sm-1 text-center">企業名:</span>
+		<div class="col-sm-5">
+			<%= render 'posts/tag_list' , tag_list: @post.mycompany_list %>
+		</div>
+		<span class="col-sm-1 text-center">タグ:</span>
+		<div class="col-sm-5">
+			<%= render 'posts/tag_list' , tag_list: @post.mytag_list %>
+		</div>
+	</div>
 </div>
 
 <div align="right">
