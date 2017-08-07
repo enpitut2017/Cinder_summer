@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def detail
-    @posts = Post.where(params[:user_id])
+    @posts = Post.where(user_id: params[:user_id])
     @user = User.find(params[:user_id])
   end
 
