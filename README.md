@@ -9,6 +9,7 @@ https://guarded-bastion-50533.herokuapp.com
 - 真次 彰平 https://github.com/Pelkira  
 - 宮下 拓視 https://github.com/TakumiMiyashita  
 
+
 リリースノート
 8/2 ユーザ登録ができるようになった
     体験談が投稿できるようになった
@@ -29,6 +30,7 @@ https://guarded-bastion-50533.herokuapp.com
   
 8/8 プロダクト名が決まりました
 　　投稿に改行が反映されるようになった
+  
 
 レビュー
 
@@ -39,6 +41,7 @@ https://guarded-bastion-50533.herokuapp.com
 8/4 問題の共有をする・gitを使う
 
 8/7 タスク管理をちゃんとする
+
 
 開発最適化とかわかったこと
 
