@@ -12,14 +12,11 @@
 <% @posts.each do |post| %>
 <div class="panel panel-success">
 	<div class="panel-heading">
-		<h3 class="panel-title row">
+		<h4>
 			<strong>
-				<%= link_to '件名', post,:class => "col-sm-8" %>	
-			</strong>
-			<div class="col-sm-4 text-right">
-				<%= link_to "#{post.user.name}", detail_posts_path(:user_id => post.user.id) %> さんの投稿
-			</div>
-		</h3>
+				<%= link_to "#{post.user.name}", detail_posts_path(:user_id => post.user.id) %>
+			</strong>さんの投稿
+		</h4>
 	</div>
 	<div class="panel-body">
 		<%= post.content %>
